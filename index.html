@@ -27,6 +27,38 @@
     @media(min-width:701px){.menubar{height:74px}.panel{min-height:max(510px,calc(100svh - 234px))}.app-rail{min-height:max(567px,calc(100svh - 177px))}.about-panel{padding-block:30px}.name-card{min-height:190px}.directory-row .arrow{line-height:1}.statusbar{margin-top:16px;min-height:44px;margin-bottom:8px}.desktop-footer{padding-bottom:12px}}
     @media(max-width:350px){.desktop{padding-inline:11px}.draft-badge{display:none}.panel{padding-inline:19px}.window-bar{padding-inline:13px}.profile-intro{font-size:15px}.identity-actions{gap:7px}.identity-actions .btn{font-size:10px;padding-inline:12px;gap:8px}.identity h1{font-size:43px}.status-left b{display:none}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+    /* Public article card */
+    .article-showcase{display:flex;flex-direction:column;align-items:center;padding:12px 24px 4px}
+    .article-deck{width:100%;display:flex;flex-direction:column;align-items:center;gap:25px}
+    .article-stack{position:relative;isolation:isolate;width:min(520px,100%);margin:0 12px 15px}
+    .article-stack:before,.article-stack:after{content:"";position:absolute;inset:15px -9px 4px 15px;border:1px solid var(--line);border-radius:16px;background:var(--pane);z-index:-1;transform:rotate(2.2deg);box-shadow:0 10px 30px #24314906;pointer-events:none}
+    .article-stack:before{inset:25px -16px 12px 29px;transform:rotate(4deg);opacity:.5}
+    .article-card{position:relative;display:block;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 18px 45px #263c5b13,0 3px 8px #263c5b05;transition:transform .22s,box-shadow .22s}
+    .article-card:hover{transform:translateY(-4px);box-shadow:0 24px 55px #263c5b1d,0 4px 10px #263c5b08}
+    .article-card:focus-visible{outline:3px solid #80a5ff;outline-offset:7px}
+    .article-cover{aspect-ratio:2.06;background:#eee9db;overflow:hidden;border-bottom:1px solid var(--line);position:relative}
+    .article-cover svg{display:block;width:100%;height:100%;stroke:none;stroke-width:initial;stroke-linecap:initial;stroke-linejoin:initial}
+    .article-body{padding:25px 28px 24px;min-height:186px;display:flex;flex-direction:column}
+    .article-eyebrow{font-size:9px;letter-spacing:1.7px;color:var(--blue);line-height:1.7;margin:0 0 13px}
+    .article-body h2{font-size:24px;line-height:1.55;letter-spacing:-.8px;font-weight:650;margin:0;color:var(--text);text-wrap:pretty}
+    .article-bottom{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:25px;padding-top:3px}
+    .article-open{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:600;color:var(--blue);min-height:28px}
+    .article-open svg{width:16px;height:16px;transition:transform .2s}
+    .article-card:hover .article-open svg{transform:translate(2px,-2px)}
+    .article-source{color:var(--faint);font-size:9px;letter-spacing:.4px}
+    .article-navigation{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:4px}
+    .article-control{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--muted);background:var(--paper);transition:color .18s,border-color .18s,background .18s}
+    .article-control:hover{color:var(--blue);border-color:var(--blue);background:var(--pane)}
+    .article-control svg{width:17px;height:17px}
+    .article-pagination{font-size:10px;letter-spacing:2px;color:var(--faint);margin:0;line-height:1.8;min-width:68px;text-align:center}
+    .article-pagination strong{font-weight:600;color:var(--muted)}
+    [data-theme="dark"] .article-card{box-shadow:0 18px 45px #0002}
+    [data-theme="dark"] .article-cover{background:#d5d0c4}
+    @media(max-width:920px){.article-showcase{padding-inline:15px}.article-body{padding:23px 25px;min-height:178px}.article-body h2{font-size:22px}}
+    @media(max-width:700px){.article-showcase{padding:6px 7px 0 0}.article-stack{width:100%;margin:0 0 14px}.article-stack:after{inset:10px -5px 4px 10px;transform:rotate(1.5deg)}.article-stack:before{inset:18px -9px 9px 19px;transform:rotate(2.6deg)}.article-card{border-radius:12px}.article-stack:before,.article-stack:after{border-radius:12px}.article-cover{aspect-ratio:1.75}.article-body{padding:21px 20px 19px;min-height:169px}.article-eyebrow{font-size:8px;letter-spacing:1.2px;margin-bottom:11px}.article-body h2{font-size:22px;line-height:1.55;letter-spacing:-.7px}.article-bottom{margin-top:22px;gap:10px}.article-open{font-size:11px;gap:7px;min-height:30px}.article-open svg{width:15px;height:15px}.article-source{font-size:8px}.article-pagination{font-size:9px;margin-top:6px}}
+    @media print{.article-stack:before,.article-stack:after,.article-navigation{display:none!important}.article-deck>.article-stack[hidden]{display:block!important}.article-showcase{padding:0}.article-stack{max-width:420px}.article-card{box-shadow:none;break-inside:avoid}}
+
     @media print{body{background:white;color:#222}.menubar,.app-rail,.window-bar,.statusbar,.desktop-footer,.identity-actions,.toast,dialog{display:none!important}.desktop{width:100%;padding:0}.workspace{display:block}.window{border:0;box-shadow:none}.panel[hidden],.panel{display:block!important;min-height:0;padding:24px 0;break-inside:avoid}.about-panel{display:grid!important}.name-card{print-color-adjust:exact}.panel h1{font-size:27px}.identity h1{font-size:40px}a{color:#222}.btn{box-shadow:none}}
 
     .email-channel{grid-column:1/-1}.email-channel .channel-start{flex:1}.copy-email{min-width:57px;min-height:44px;border:1px solid var(--line);border-radius:7px;display:flex;align-items:center;justify-content:center;gap:7px;font-size:10px;padding:9px 11px;flex-shrink:0;background:var(--paper)}.copy-email:hover{color:var(--blue);border-color:var(--blue)}.copy-email svg{width:15px;height:15px}.channel-xhs .channel-icon{color:#d84962}.xhs-mark{font-size:17px;font-weight:700}.command-field .dialog-close{flex-shrink:0;width:28px;height:28px}#command-input{min-width:0}.record-empty strong{font-size:14px;color:var(--text);font-weight:550}.record-card .record-empty{line-height:1.9;min-height:74px}
@@ -87,7 +119,102 @@
             <div class="panel-heading"><div><p class="overline mono">EXPERIENCE &amp; EDUCATION</p><h1 id="experience-title" tabindex="-1">走过的路，留下的积累。</h1><p class="panel-description">工作、学习，以及每一次值得记住的成长。</p></div><span class="panel-index mono">02 / JOURNEY</span></div><div class="experience-grid"><article class="record-card"><div class="record-icon"><svg aria-hidden="true"><use href="#i-case"></use></svg></div><h2>工作与实践</h2><p class="record-empty"><strong>AI 产品经理</strong><br>北京<br>实践记录，持续整理中。</p><div class="record-lines" aria-hidden="true"><span></span><span></span><span></span></div></article><article class="record-card"><div class="record-icon"><svg aria-hidden="true"><use href="#i-grad"></use></svg></div><h2>教育与学习</h2><p class="record-empty"><strong>北京联合大学</strong><br>视觉传达专业 · 本科<br>2024 年毕业</p><div class="record-lines" aria-hidden="true"><span></span><span></span><span></span></div></article></div><p class="pending-note"><svg aria-hidden="true"><use href="#i-info"></use></svg><span>经历会慢慢积累，这里也会持续更新。</span></p>
           </section>
           <section class="panel" id="notes" data-panel="notes" aria-labelledby="notes-title">
-            <div class="panel-heading"><div><p class="overline mono">NOTES &amp; OBSERVATIONS</p><h1 id="notes-title" tabindex="-1">给想法，留一个位置。</h1><p class="panel-description">一些观察、思考和不想忘记的片段。</p></div><span class="panel-index mono">03 / NOTES</span></div><div class="note-empty"><div class="paper-stack" aria-hidden="true"><div class="paper-sheet"><svg><use href="#i-notes"></use></svg><i></i><i></i><i></i><i></i></div></div><div><h2>故事，慢慢写。</h2><p>一些观察、思考和日常片段。<br>想好了，就慢慢写下来。</p></div></div><details class="log-details"><summary><span class="log-date mono">2026.10.19</span><span class="log-title">这个个人空间，开始了。</span><svg aria-hidden="true"><use href="#i-plus"></use></svg></summary><div class="log-body">创建了个人主页，并开始整理介绍、项目与记录。网站会随着内容不断更新。</div></details>
+            <div class="panel-heading"><div><p class="overline mono">NOTES &amp; OBSERVATIONS</p><h1 id="notes-title" tabindex="-1">给想法，留一个位置。</h1><p class="panel-description">一些观察、思考和不想忘记的片段。</p></div><span class="panel-index mono">03 / NOTES</span></div><div class="article-showcase" aria-label="公开文章">
+  <div class="article-deck" id="article-deck">
+  <div class="article-stack" role="group" aria-label="第 1 篇，共 2 篇">
+    <a class="article-card" href="https://mp.weixin.qq.com/s?__biz=MzY5MzQ2NTYwNw%3D%3D&amp;mid=2247483670&amp;idx=1&amp;sn=02fac470189e0c2c3b5d59b2c1d72b55" target="_blank" rel="noopener noreferrer" aria-labelledby="ai-article-title ai-article-open">
+      <div class="article-cover" aria-hidden="true">
+        <svg viewBox="0 0 1040 504" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="article-grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#a8a48e" stroke-width=".55" opacity=".3"/></pattern>
+            <linearGradient id="article-paper" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f3efe4"/><stop offset="1" stop-color="#e7e0ce"/></linearGradient>
+            <linearGradient id="article-chip" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fdfcf6"/><stop offset="1" stop-color="#dedfd5"/></linearGradient>
+            <filter id="article-shadow" x="-50%" y="-50%" width="200%" height="220%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#6c705b" flood-opacity=".13"/></filter>
+          </defs>
+          <rect width="1040" height="504" fill="url(#article-paper)"/>
+          <rect width="1040" height="504" fill="url(#article-grid)"/>
+          <path d="M0 407C161 398 210 439 347 426S596 393 731 417 922 411 1040 394V504H0Z" fill="#d5cfbd" opacity=".24"/>
+          <g font-family="monospace" fill="#828677" font-size="12" letter-spacing="3"><text x="53" y="54">PRODUCT NOTES / 001</text><text x="53" y="457">AI × PRODUCT</text><text x="790" y="457">POSSIBILITIES ↗</text></g>
+          <g fill="none" stroke="#788caa" stroke-width="1.5" opacity=".7">
+            <path d="M77 251h151m92 0h135m148 0h100m0 0v-64h76m0 0v-59h124" stroke-dasharray="5 7"/>
+            <path d="M533 124v-31m0 287v-31M406 251h-30m315 0h-33"/>
+            <path d="M153 220v-35h88m39 147v33h103M843 214v67h77" stroke-dasharray="3 7"/>
+          </g>
+          <g fill="#f2efe4" stroke="#8d9a9b" stroke-width="1.4"><rect x="91" y="229" width="44" height="44" rx="5"/><rect x="191" y="228" width="45" height="45" rx="5"/><rect x="289" y="224" width="53" height="53" rx="5"/></g>
+          <g stroke="#98a5a7" stroke-width="1.4" fill="none"><path d="M103 241h18m-18 7h18m-18 7h12M204 241h19m-19 8h19m-19 8h11M304 238h23m-23 9h23m-23 9h15"/></g>
+          <g filter="url(#article-shadow)">
+            <path d="m457 167 77-43 78 44v94l-78 44-77-44Z" fill="url(#article-chip)" stroke="#82949b" stroke-width="1.4"/>
+            <path d="m457 167 77 44 78-43M534 211v95" fill="none" stroke="#9ba6a3" stroke-width="1.3"/>
+            <path d="m470 161 64-35 64 36-64 36Z" fill="#dce6ed" opacity=".65"/>
+            <text x="534" y="178" text-anchor="middle" font-family="Georgia,serif" font-size="33" font-style="italic" fill="#4b6b99">AI</text>
+          </g>
+          <g fill="#eff0e6" stroke="#8d9c9c" stroke-width="1.4">
+            <path d="M708 320v-45h68v45Z"/>
+            <path d="M776 320V216h68v104Z"/>
+            <path d="M844 320V157h68v163Z"/>
+          </g>
+          <path d="m712 249 63-57 66-43 68-58m-1 0h-22m22 0v23" fill="none" stroke="#5075ab" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="#597ba8"><circle cx="711" cy="249" r="4"/><circle cx="775" cy="192" r="4"/><circle cx="841" cy="149" r="4"/></g>
+          <path d="M690 337h238" stroke="#9ba49a" stroke-width="1"/>
+          <g font-family="monospace" fill="#879184" font-size="9" letter-spacing="2"><text x="711" y="363">EXPLORE</text><text x="842" y="363">BUILD</text></g>
+          <path d="m380 120 3 9 10 3-10 3-3 10-3-10-10-3 10-3Z" fill="#8a9ba8" opacity=".65"/>
+          <circle cx="947" cy="374" r="3" fill="#a3ad99"/>
+        </svg>
+      </div>
+      <div class="article-body">
+        <p class="article-eyebrow mono">WECHAT ARTICLE · 01</p>
+        <h2 id="ai-article-title">如何用AI提高产品上限？</h2>
+        <div class="article-bottom"><span class="article-open" id="ai-article-open">打开原文<svg aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only">（在新标签页打开）</span></span><span class="article-source">微信公众号</span></div>
+      </div>
+    </a>
+  </div>
+  <div class="article-stack" role="group" aria-label="第 2 篇，共 2 篇">
+    <a class="article-card" href="https://mp.weixin.qq.com/s?__biz=MzY5MzQ2NTYwNw%3D%3D&amp;mid=2247483669&amp;idx=1&amp;sn=e3ee54fe22b01c747b6e4ba652152d43" target="_blank" rel="noopener noreferrer" aria-labelledby="ai-direction-title ai-direction-open">
+      <div class="article-cover" aria-hidden="true">
+        <svg viewBox="0 0 1040 504" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="direction-grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#8a9e9c" stroke-width=".55" opacity=".22"/></pattern>
+            <linearGradient id="direction-paper" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#eef1e9"/><stop offset="1" stop-color="#dfe8e5"/></linearGradient>
+            <linearGradient id="direction-page" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fffdf4"/><stop offset="1" stop-color="#eaeadd"/></linearGradient>
+            <filter id="direction-shadow" x="-50%" y="-50%" width="200%" height="220%"><feDropShadow dx="0" dy="12" stdDeviation="11" flood-color="#57706c" flood-opacity=".13"/></filter>
+          </defs>
+          <rect width="1040" height="504" fill="url(#direction-paper)"/>
+          <rect width="1040" height="504" fill="url(#direction-grid)"/>
+          <path d="M0 411c144-44 256 33 411 4s253-33 363-3 189 6 266-20v112H0Z" fill="#cad8d1" opacity=".3"/>
+          <g font-family="monospace" fill="#7a8b83" font-size="12" letter-spacing="3"><text x="90" y="54">LIFE NOTES / 002</text><text x="90" y="457">EXPLORE &amp; CREATE</text><text x="754" y="457">A NEW DIRECTION</text></g>
+          <g fill="none" stroke="#829793" stroke-width="1.5">
+            <circle cx="520" cy="276" r="88" stroke-dasharray="3 8" opacity=".5"/>
+            <path d="M520 398v-68m0-97v-41c0-23-11-35-34-35H355m165 76v-41c0-23 11-35 34-35h131" stroke-dasharray="5 7"/>
+            <path d="m366 147-11 10 11 10m308-20 11 10-11 10"/>
+          </g>
+          <g filter="url(#direction-shadow)" stroke="#8a9c98" stroke-width="1.5" stroke-linejoin="round">
+            <path d="m203 207 89-22 68 30-89 22Z" fill="#d8e0d4"/><path d="m203 207 68 30v17l-68-30Z" fill="#cbd7cb"/><path d="m271 237 89-22v17l-89 22Z" fill="#f6f3e5"/>
+            <path d="m218 178 89-22 68 30-89 22Z" fill="#e7e6d6"/><path d="m218 178 68 30v18l-68-30Z" fill="#d5dccd"/><path d="m286 208 89-22v18l-89 22Z" fill="#faf6e8"/>
+            <rect x="704" y="133" width="161" height="116" rx="9" fill="#f8faf4"/><path d="M704 158h161" fill="none"/><path d="m728 181 13 12-13 12m29 1h28" fill="none" stroke="#5d7d94" stroke-width="2.8" stroke-linecap="round"/>
+            <circle cx="717" cy="146" r="2" fill="#92aaa0"/><circle cx="727" cy="146" r="2" fill="#bcc9b3"/><circle cx="737" cy="146" r="2" fill="#c3d4c5"/>
+            <path d="M445 283c24-9 49-6 75 8 26-14 51-17 75-8v73c-24-9-49-6-75 8-26-14-51-17-75-8Z" fill="url(#direction-page)"/><path d="M520 291v73" fill="none"/>
+            <path d="m459 302 45 7m-45 9 45 7m-45 9 30 5m47-30 45-7m-45 23 45-7m-45 23 31-6" fill="none" stroke="#b2bbaa"/>
+          </g>
+          <path d="m811 280 5 15 16 5-16 5-5 16-5-16-16-5 16-5Z" fill="#6f8faa" opacity=".75"/>
+          <g font-family="monospace" fill="#82958a" font-size="10" letter-spacing="2"><text x="248" y="286">LEARN</text><text x="747" y="286">TRY</text></g>
+          <circle cx="520" cy="404" r="4" fill="#6f8f9d"/>
+          <circle cx="170" cy="337" r="3" fill="#9cafa2"/>
+        </svg>
+      </div>
+      <div class="article-body">
+        <p class="article-eyebrow mono">WECHAT ARTICLE · 02</p>
+        <h2 id="ai-direction-title">在AI时代下我开始重新考虑：继续考研考公，还是试试我能利用AI干点什么呢？</h2>
+        <div class="article-bottom"><span class="article-open" id="ai-direction-open">打开原文<svg aria-hidden="true"><use href="#i-external"></use></svg><span class="sr-only">（在新标签页打开）</span></span><span class="article-source">微信公众号</span></div>
+      </div>
+    </a>
+  </div>
+  </div>
+  <div class="article-navigation" hidden>
+    <button class="article-control" type="button" data-article-step="-1" aria-label="上一篇文章" aria-controls="article-deck"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></svg></button>
+    <p class="article-pagination mono" role="status" aria-live="polite" aria-atomic="true"><span class="sr-only" data-article-status>第 1 篇，共 2 篇</span><span aria-hidden="true"><strong data-article-current>01</strong> / 02</span></p>
+    <button class="article-control" type="button" data-article-step="1" aria-label="下一篇文章" aria-controls="article-deck"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></svg></button>
+  </div>
+</div><details class="log-details"><summary><span class="log-date mono">2026.10.19</span><span class="log-title">这个个人空间，开始了。</span><svg aria-hidden="true"><use href="#i-plus"></use></svg></summary><div class="log-body">创建了个人主页，并开始整理介绍、项目与记录。网站会随着内容不断更新。</div></details>
           </section>
           <section class="panel" id="contact" data-panel="contact" aria-labelledby="contact-title">
             <div class="panel-heading"><div><p class="overline mono">LET'S CONNECT</p><h1 id="contact-title" tabindex="-1" class="sr-only">联系房诗奇</h1><p class="contact-intro">下一个故事，<br>也许从一句<span>你好</span>开始。</p><p class="contact-description">关于项目、合作，或者只是想认识一下，<br>欢迎通过以下公开渠道与我联系。</p></div><span class="panel-index mono">04 / CONNECT</span></div><div class="contact-grid"><div class="channel email-channel"><a class="channel-start" href="mailto:1339782730@qq.com"><span class="channel-icon"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><div><h2 class="mono">EMAIL</h2><p>1339782730@qq.com</p></div></a><button type="button" class="copy-email" data-copy="1339782730@qq.com" aria-label="复制邮箱 1339782730@qq.com" title="复制邮箱"><svg aria-hidden="true"><use href="#i-copy"/></svg><span>复制</span></button></div><a class="channel" href="https://github.com/Qi0618" target="_blank" rel="noopener noreferrer"><div class="channel-start"><span class="channel-icon"><svg aria-hidden="true"><use href="#i-github"/></svg></span><div><h2 class="mono">GITHUB</h2><p>Qi0618</p></div></div><svg class="channel-arrow" aria-hidden="true"><use href="#i-external"/></svg></a><a class="channel channel-xhs" href="https://xhslink.cn/o/AJN5u02B3Gh" target="_blank" rel="noopener noreferrer"><div class="channel-start"><span class="channel-icon xhs-mark" aria-hidden="true">书</span><div><h2 class="mono">XIAOHONGSHU</h2><p>小红书</p></div></div><svg class="channel-arrow" aria-hidden="true"><use href="#i-external"/></svg></a></div><p class="contact-signoff mono"><i></i>THANK YOU FOR STOPPING BY.</p>
@@ -179,6 +306,26 @@
     window.addEventListener('hashchange', syncRoute);
     window.addEventListener('popstate', syncRoute);
     syncRoute();
+
+    const articleShowcase = document.querySelector('.article-showcase');
+    const articleSlides = [...document.querySelectorAll('#article-deck > .article-stack')];
+    const articleNavigation = articleShowcase?.querySelector('.article-navigation');
+    if (articleSlides.length > 1 && articleNavigation) {
+      let currentArticle = 0;
+      const articleCurrent = articleNavigation.querySelector('[data-article-current]');
+      const articleStatus = articleNavigation.querySelector('[data-article-status]');
+      function showArticle(index) {
+        currentArticle = (index + articleSlides.length) % articleSlides.length;
+        articleSlides.forEach((slide, position) => { slide.hidden = position !== currentArticle; });
+        articleCurrent.textContent = String(currentArticle + 1).padStart(2, '0');
+        articleStatus.textContent = `第 ${currentArticle + 1} 篇，共 ${articleSlides.length} 篇`;
+      }
+      articleNavigation.querySelectorAll('[data-article-step]').forEach(button => {
+        button.addEventListener('click', () => showArticle(currentArticle + Number(button.dataset.articleStep)));
+      });
+      showArticle(0);
+      articleNavigation.hidden = false;
+    }
 
     document.querySelector('.skip')?.addEventListener('click', event => {
       event.preventDefault();
