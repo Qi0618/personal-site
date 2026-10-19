@@ -1,77 +1,44 @@
-<div align="center">
+# 房诗奇 · 个人主页
 
-# 🌐 个人主页
+一个以桌面窗口为灵感的个人介绍页面，面向 AI 产品经理相关交流。
 
-**一个关于创作、探索与日常的个人空间**
+- 在线网站：[qi0618.github.io/personal-site](https://qi0618.github.io/personal-site/)
+- 页面入口：`dist/index.html`
+- 原生 HTML、CSS、JavaScript，样式、图标与脚本全部内嵌，可离线打开。
 
-纯静态 · 零依赖 · 单文件 · 离线可用
+## 页面内容
 
-[![在线预览](https://img.shields.io/badge/在线预览-GitHub_Pages-success?style=for-the-badge&logo=github)](https://qi0618.github.io/personal-site/)
-[![部署状态](https://img.shields.io/github/actions/workflow/status/Qi0618/personal-site/deploy.yml?branch=main&style=for-the-badge&label=部署状态)](https://github.com/Qi0618/personal-site/actions)
+包含个人介绍、教育背景和联系方式。目前未展示项目、工作经历或能力清单。
 
-</div>
+- 房诗奇，AI 产品经理，北京。
+- 北京联合大学，视觉传达专业，本科，2024 年毕业。
+- 邮箱、GitHub 与小红书入口。
 
----
+支持手机布局、浅色与深色主题、栏目历史导航、快捷搜索（⌘ / Ctrl + K）、邮箱复制和键盘操作。无 JavaScript 时仍可阅读全部正文并使用栏目锚点。
 
-## ✨ 简介
+## 本地预览
 
-一个轻量级个人主页模板：打开 `dist/index.html` 即可使用，**无需安装依赖，也无需构建**。CSS、JavaScript、插画与图标全部内嵌于单个 HTML 文件中，支持完全离线查看。
+双击 `dist/index.html`，或运行静态服务器：
 
-## 🎯 特性
-
-| 类别 | 说明 |
-| :--- | :--- |
-| 📱 响应式 | 桌面与移动端自适应布局，附带手机菜单 |
-| 🌗 主题 | 浅色 / 深色主题一键切换，偏好保存在浏览器中 |
-| 🪟 弹窗 | 项目与手记详情弹窗，纯文本写入，支持换行 |
-| ✉️ 联系 | 一键复制邮箱，`mailto:` 唤起系统邮件应用 |
-| ♿ 无障碍 | 键盘焦点支持、减弱动画偏好支持 |
-| 🚀 轻量 | 单文件、零依赖，可离线使用 |
-
-## 🚀 快速开始
-
-```bash
-# 克隆仓库
-git clone https://github.com/Qi0618/personal-site.git
-
-# 直接用浏览器打开站点入口
-open personal-site/dist/index.html   # macOS
+```sh
+python3 -m http.server 4173 --directory dist
 ```
 
-> 无需 `npm install`，无需构建，双击 `dist/index.html` 即可预览。
+浏览器访问 `http://localhost:4173`。
 
-## 🎨 自定义
+## 修改内容
 
-| 搜索内容 | 说明 |
-| :--- | :--- |
-| `你的名字` / `YOUR NAME` | 替换为你的姓名与网站标识 |
-| `hello@example.com` | 替换为你的真实邮箱（含复制按钮脚本） |
-| `<title>` 与页面描述 | 修改浏览器标题与站点介绍 |
-| 个人介绍 / 兴趣标签 | 替换为你自己的介绍文字 |
+直接编辑 `dist/index.html`，无需安装依赖或构建。个人信息和联系链接均位于 HTML 正文中，栏目名称与搜索关键词位于页面末尾的脚本中。
 
-> 💡 两个作品与三篇手记均为示例：卡片文案位于 HTML 中，详情内容位于脚本的 `details` 对象中。
+## GitHub Pages 发布
 
-## 📁 项目结构
+源码保存在 `main`，Pages 从 `gh-pages` 分支的根目录发布。`dist/.nojekyll` 禁用 Jekyll 处理。
 
-```
-personal-site/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml      # GitHub Pages 自动部署工作流
-├── dist/
-│   └── index.html          # 站点入口（单文件，开箱即用）
-├── .gitignore
-└── README.md
+修改并提交后：
+
+```sh
+git push origin main
+git subtree push --prefix dist origin gh-pages
 ```
 
-## 🚀 部署
-
-项目已配置 GitHub Pages 自动部署，推送 `main` 分支即可自动更新线上站点。
-
-- **在线地址**：<https://qi0618.github.io/personal-site/>
-- **部署方式**：GitHub Actions（`.github/workflows/deploy.yml`）
-
-## 📄 技术栈
-
-- 原生 HTML / CSS / JavaScript
-- GitHub Actions + GitHub Pages
+仓库的 Pages 设置为“Deploy from a branch”，分支 `gh-pages`、目录 `/`。`github-pages` 环境允许该分支部署。推送发布分支后，GitHub Pages 会更新在线页面。
